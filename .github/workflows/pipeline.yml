@@ -21,7 +21,10 @@ jobs:
   # The "build" workflow
   build:
     # The type of runner that the job will run on
-    runs-on: ['windows-latest', 'ubuntu-20.04']
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
