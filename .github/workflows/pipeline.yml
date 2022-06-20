@@ -7,9 +7,11 @@ name: Continous Integration
 on:
   push:
     branches:
-    - '*'
-  pull_request:
-    - '*' 
+      - '*'
+    pull_request:
+      - '*'
+    tags:
+      - '*'
 
 # Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
