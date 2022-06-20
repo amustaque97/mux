@@ -7,14 +7,9 @@ name: Continous Integration
 on:
   push:
     branches:
-    - master
-    - staging
-    - develop
+    - '*'
   pull_request:
-    branches:
-    - master
-    - staging
-    - develop
+    - '*' 
 
 # Cancels all previous workflow runs for pull requests that have not completed.
 concurrency:
@@ -42,7 +37,7 @@ jobs:
     - name: Setup Go
       uses: actions/setup-go@v2
       with:
-        go-version: '1.18.0' # The Go version to download (if necessary) and use.
+        go-version: '>=1.13' # The Go version to download (if necessary) and use.
     
     # Install all the dependencies
     - name: Install dependencies
